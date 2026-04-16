@@ -61,8 +61,8 @@
   --card-foreground: var(--foreground);
   --popover: color-mix(in oklab, white 84%, var(--brand) 16%);
   --popover-foreground: var(--foreground);
-  --brand: oklch(0.62 0.24 25);
-  --brand-foreground: oklch(0.99 0.01 20);
+  --brand: oklch(0.70 0.15 225);
+  --brand-foreground: oklch(0.99 0.01 230);
   --primary: var(--brand);
   --primary-foreground: var(--brand-foreground);
   --secondary: color-mix(in oklab, white 80%, var(--brand) 20%);

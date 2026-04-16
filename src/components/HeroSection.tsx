@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 import type { BlockConfig } from "@/content/portfolio.schema";
 
@@ -11,6 +12,9 @@ type HeroSectionProps = {
 export default function HeroSection({ block }: HeroSectionProps) {
   return (
     <section className="min-h-screen flex items-center section-padding pt-28 bg-mesh relative overflow-hidden">
+      <BackgroundBeamsWithCollision className="absolute inset-0 h-full md:h-full bg-transparent pointer-events-none">
+        <div />
+      </BackgroundBeamsWithCollision>
       <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-coral/10 blur-3xl animate-pulse-glow" />
       <div
         className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-accent/8 blur-3xl animate-pulse-glow"

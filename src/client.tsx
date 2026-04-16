@@ -1,5 +1,5 @@
 import { StrictMode, startTransition } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { RouterProvider } from "@tanstack/react-router";
 
 import { getRouter } from "./router";
@@ -11,16 +11,19 @@ async function startApp() {
   await router.load();
 
   const container = document.getElementById("root");
-  if (!container) {
-    throw new Error("Could not find root element");
-  }
-
   startTransition(() => {
-    createRoot(container).render(
+    const app = (
       <StrictMode>
         <RouterProvider router={router} />
-      </StrictMode>,
+      </StrictMode>
     );
+
+    // Support both static SPA entry (<div id="root"/>) and full-document SSR hydration.
+    if (container) {
+      createRoot(container).render(app);
+    } else {
+      hydrateRoot(document, app);
+    }
   });
 }
 

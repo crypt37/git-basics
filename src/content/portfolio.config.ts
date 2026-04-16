@@ -36,9 +36,9 @@ const socialLinks = {
 
 // Single source of truth for brand hue.
 // Change this one value to retheme all accent-driven UI parts.
-// Switched to a bluish-white direction per user request.
-const brandColor = "oklch(0.62 0.24 25)";
-const brandTextOnColor = "oklch(0.99 0.01 20)";
+// Aqua-blue direction.
+const brandColor = "oklch(0.70 0.15 225)";
+const brandTextOnColor = "oklch(0.99 0.01 230)";
 
 const themeColors = {
   // Keep overrides minimal: all other tokens are derived from these in styles.css.
